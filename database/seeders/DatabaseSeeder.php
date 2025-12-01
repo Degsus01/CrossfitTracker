@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
         RolesTableSeeder::class,
         AdminUserSeeder::class,
         PagosSeeder::class,
-        ProgresosSeeder::class,// opcional
+        ProgresosSeeder::class,
+        EntrenadoresSeeder::class,// opcional
     ]);
 }
 
