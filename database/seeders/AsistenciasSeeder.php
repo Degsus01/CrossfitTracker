@@ -15,7 +15,7 @@ class AsistenciasSeeder extends Seeder
                 'miembro_id' => 1,
                 'entrenador_id' => 1,
                 'fecha' => '2025-01-06',
-                'presente' => 'presente', // 👈 cambia aquí
+                'estado' => 'presente', // 👈 cambia aquí
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
@@ -23,7 +23,7 @@ class AsistenciasSeeder extends Seeder
                 'miembro_id' => 2,
                 'entrenador_id' => 1,
                 'fecha' => '2025-01-07',
-                'presente' => 'ausente', // 👈 también puedes usar otro valor
+                'estado' => 'ausente', // 👈 también puedes usar otro valor
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
