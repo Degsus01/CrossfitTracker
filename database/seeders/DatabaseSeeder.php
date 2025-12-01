@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
         AdminUserSeeder::class,
         PagosSeeder::class,
         ProgresosSeeder::class,
-        EntrenadoresSeeder::class,// opcional
+        EntrenadoresSeeder::class,
+        AsistenciasSeeder::class,// opcional
     ]);
 }
 
