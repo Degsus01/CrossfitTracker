@@ -13,7 +13,16 @@ class DatabaseSeeder extends Seeder
 {
     $this->call([
         RolesTableSeeder::class,
-        AdminUserSeeder::class, // opcional
+        AdminUserSeeder::class,
+        MembresiasSeeder::class,
+        MiembrosSeeder::class,
+        RutinasSeeder::class, 
+        AsignacionRutinaSeeder::class,
+        ClasesVirtualesSeeder::class,
+        AsistenciasSeeder::class,
+        EntrenadoresSeeder::class,
+        PagosSeeder::class,
+        ProgresosSeeder::class,// opcional
     ]);
 }
 
