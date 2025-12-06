@@ -12,7 +12,7 @@ class EntrenadoresSeeder extends Seeder
         $entrenadores = DB::table('roles')->where('slug','entrenador')->value('id');
         
         DB::table('users')->updateOrInsert(
-            ['email' => 'entrenador'],
+            ['email' => 'entrenador@example.com'],
             [
                 'name' => 'Jhon',
                 'email' => 'entrenador@example.com',
