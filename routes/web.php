@@ -13,6 +13,8 @@ use App\Http\Controllers\{
 };
 use App\Http\Controllers\AdminReportController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\AttendanceReportController;
+use App\Http\Controllers\FinancialReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,33 +59,39 @@ Route::middleware(['auth', 'rol:admin'])
     ->as('admin.')
     ->group(function () {
 
-        // ✅ Dashboard admin → GET /admin  (nombre: admin.dashboard)
+        // Dashboard admin
         Route::get('/', [AdminDashboardController::class, 'index'])
             ->name('dashboard');
 
-        // ✅ Pagos → admin.pagos.*
+        // Pagos
         Route::resource('pagos', PagoController::class);
 
-        // ✅ Miembros (gestión)
+        // Miembros (gestión)
         Route::resource('miembros', MiembroController::class)->except(['index','show']);
 
-        // ✅ Rutinas (gestión)
+        // Rutinas (gestión)
         Route::resource('rutinas', RutinaController::class)->except(['index','show']);
 
-        // ✅ Clases virtuales (gestión)
+        // Clases virtuales (gestión)
         Route::resource('clases-virtuales', ClaseVirtualController::class)
             ->except(['index','show'])
             ->parameters(['clases-virtuales' => 'clase_virtual']);
 
-        // ✅ Reportes admin
+        // Reportes admin (vistas)
         Route::get('reportes/asistencias', [AdminReportController::class, 'asistencias'])
             ->name('reportes.asistencias');
 
         Route::get('reportes/finanzas', [AdminReportController::class, 'finanzas'])
             ->name('reportes.finanzas');
+
+        // 🔥 Guardar reportes en tablas
+        Route::post('reportes/asistencias/generar', [AttendanceReportController::class, 'store'])
+            ->name('reportes.asistencias.generar');
+
+        Route::post('reportes/finanzas/generar', [FinancialReportController::class, 'store'])
+            ->name('reportes.finanzas.generar');
     });
-
-
+    
 /*
 |--------------------------------------------------------------------------
 | ADMIN + ENTRENADOR (gestión)

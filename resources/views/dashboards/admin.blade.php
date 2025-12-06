@@ -46,29 +46,49 @@
 
     <div class="grid md:grid-cols-2 gap-4">
 
-        <a href="{{ route('admin.reportes.asistencias') }}"
-           class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:shadow-md transition flex items-center gap-4">
-            <svg class="w-10 h-10 text-indigo-500" fill="none" stroke="currentColor" stroke-width="1.5"
-                viewBox="0 0 24 24">
-                <path stroke-linecap="round" d="M3 3h12M3 7h9m-9 4h6m4 5h8m-4-4v8"></path>
-            </svg>
-            <div>
-                <p class="text-lg font-semibold">Reporte de asistencias</p>
-                <p class="text-gray-500 text-sm">Resumen completo de asistencia por miembro.</p>
-            </div>
-        </a>
+        {{-- CARD + BOTÓN REPORTE DE ASISTENCIAS --}}
+        <div>
+            <a href="{{ route('admin.reportes.asistencias') }}"
+               class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:shadow-md transition flex items-center gap-4">
+                <svg class="w-10 h-10 text-indigo-500" fill="none" stroke="currentColor" stroke-width="1.5"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" d="M3 3h12M3 7h9m-9 4h6m4 5h8m-4-4v8"></path>
+                </svg>
+                <div>
+                    <p class="text-lg font-semibold">Reporte de asistencias</p>
+                    <p class="text-gray-500 text-sm">Resumen completo de asistencia por miembro.</p>
+                </div>
+            </a>
 
-        <a href="{{ route('admin.reportes.finanzas') }}"
-           class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:shadow-md transition flex items-center gap-4">
-            <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" stroke-width="1.5"
-                viewBox="0 0 24 24">
-                <path stroke-linecap="round" d="M12 8v8m-4-4h8m1 9H7a3 3 0 01-3-3V4a3 3 0 013-3h10a3 3 0 013 3v14a3 3 0 01-3 3z"></path>
-            </svg>
-            <div>
-                <p class="text-lg font-semibold">Reporte financiero</p>
-                <p class="text-gray-500 text-sm">Ingresos, pagos y resúmenes económicos.</p>
-            </div>
-        </a>
+            <form action="{{ route('admin.reportes.asistencias.generar') }}" method="POST" class="mt-2">
+                @csrf
+                <button class="bg-indigo-600 text-white px-3 py-1 rounded-lg">
+                    Generar reporte de asistencias
+                </button>
+            </form>
+        </div>
+
+        {{-- CARD + BOTÓN REPORTE FINANCIERO --}}
+        <div>
+            <a href="{{ route('admin.reportes.finanzas') }}"
+               class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:shadow-md transition flex items-center gap-4">
+                <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" stroke-width="1.5"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" d="M12 8v8m-4-4h8m1 9H7a3 3 0 01-3-3V4a3 3 0 013-3h10a3 3 0 013 3v14a3 3 0 01-3 3z"></path>
+                </svg>
+                <div>
+                    <p class="text-lg font-semibold">Reporte financiero</p>
+                    <p class="text-gray-500 text-sm">Ingresos, pagos y resúmenes económicos.</p>
+                </div>
+            </a>
+
+            <form action="{{ route('admin.reportes.finanzas.generar') }}" method="POST" class="mt-2">
+                @csrf
+                <button class="bg-green-600 text-white px-3 py-1 rounded-lg">
+                    Generar reporte financiero
+                </button>
+            </form>
+        </div>
 
     </div>
 </div>

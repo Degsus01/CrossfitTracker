@@ -14,7 +14,7 @@
         </div>
     @endif
 
-    <form action="{{ route('miembros.update', $miembro) }}" method="POST" class="card p-3 shadow-sm">
+    <form action="{{ route('admin.miembros.update', $miembro) }}" method="POST" class="card p-3 shadow-sm">
         @csrf
         @method('PUT')
 
