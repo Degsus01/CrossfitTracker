@@ -15,7 +15,7 @@ class EntrenadoresSeeder extends Seeder
             ['email' => 'entrenador'],
             [
                 'name' => 'Jhon',
-                'email' => 'admin@example.com',
+                'email' => 'entrenador@example.com',
                 'password' => Hash::make('entrenador123'), // cámbialo
                 'role_id' => $entrenadores,
             ]
